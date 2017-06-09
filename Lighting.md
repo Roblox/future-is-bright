@@ -1,4 +1,6 @@
 Overview
+===
+
 We currently use one lighting system across all of Roblox, which is using voxels and is updated incrementally/lazily on CPU. It has served us well over the last 4 years, but it needs an update to match the future vision. Lighting is complicated - we should be careful when selecting the next generation technology, as there are many factors/tradeoffs to consider. Two future systems have been prototyped to help guide our decision, which will be discussed further in this document; we’ll call them “Voxels” and “Shadow maps”, although there’s more to them. It’s important to understand how both of them work to understand the limitations. There’s a summary table at the end.
 Implementation - voxels
 This is a significant evolution of our existing voxel system. First, the world data is voxelized into a set of voxel grids - each grid is centered around the character and has increasing voxel sizes, e.g. all the way from 1 stud to 16 studs (5 grids in total). Each voxel contains occupancy information (0-100% full). After this, we compute lighting data for each voxel in each grid, based on the occupancy in each voxel, and on the light sources / sun light direction. All of the above happens on the GPU, as CPU is not fast enough to update so many voxels at such a high density.
