@@ -206,40 +206,19 @@ Summary
 ===
 
 Based on the analysis above, we can summarize the tradeoffs that these two solutions provide. Cells using italic suggest that it might be possible to improve this area with further research. For the purpose of this table, Terrible < Poor < Okay < Good < Excellent.
- 
- 
-Voxels
-Shadow maps
-Performance: baseline
-Poor
-Excellent
-Performance: local lights
-Okay
-Good
-Performance: light shadows
-Good
-Okay
-Performance: resolution
-Excellent
-Okay
-Performance: geometry
-Excellent
-Okay
-Quality: lights
-Okay
-Excellent
-Quality: macro shadows
-Good
-Excellent
-Quality: character shadows
-Poor
-Excellent
-Quality: skylight
-Excellent
-Terrible
-Quality: geometrical fidelity
-Okay
-Excellent
+
+|  | Voxels | Shadow maps |
+|---|---|---|
+| Performance: baseline | Poor | Excellent
+| Performance: local lights | Okay | Good
+| Performance: light shadows | Good | Okay
+| Performance: resolution | Excellent | Okay
+| Performance: geometry | Excellent |  Okay
+| Quality: lights | Okay | Excellent
+| Quality: macro shadows | Good | Excellent
+| Quality: character shadows | Poor | Excellent
+| Quality: skylight | Excellent | Terrible
+|  Quality: geometrical fidelity | Okay | Excellent
 Quality: light leaks (>2 studs)
 Good
 Excellent
