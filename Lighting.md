@@ -55,9 +55,8 @@ To put the theoretical results above in a more practical environment, here are r
 Paris (sun shadows, very few non-shadow-casting lights)
 ---
 
-<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_voxels.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_voxels.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_shadowmap.png" width="400" /></a>
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/paris_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/paris_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/paris_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/paris_shadowmap.png" width="400" /></a>
 
-[voxels]
 Voxels: 6 ms shadow update, 1.5 ms scene render
 Shadow maps: 1 ms shadow update, 2.4 ms scene render
 Explanation: Baseline voxel shadow computation cost is larger since it’s not GPU-friendly
@@ -65,7 +64,8 @@ Explanation: Baseline voxel shadow computation cost is larger since it’s not G
 Caves (many shadow casting lights)
 ---
 
-[shadow maps]
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/caves_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/caves_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/caves_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/caves_shadowmap.png" width="400" /></a>
+
 Voxels: 7 ms shadow update, 0.9 ms scene render
 Shadow maps: 10 ms shadow update, 2.1 ms scene render
 Explanation: a lot of geometry and moving lights make shadow map update expensive
@@ -73,7 +73,8 @@ Explanation: a lot of geometry and moving lights make shadow map update expensiv
 Western (many shadow casting lights)
 ---
 
-[voxels]
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/western_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/western_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/western_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/western_shadowmap.png" width="400" /></a>
+
 Voxels: 8 ms shadow update, 1 ms scene render
 Shadow maps: 15 ms shadow update, 2.5 ms scene render
 Explanation: with moving light sources and large # of triangles, shadow map update becomes expensive
@@ -81,7 +82,8 @@ Explanation: with moving light sources and large # of triangles, shadow map upda
 Lights (1000 non shadow casting lights)
 ---
 
-[shadow maps]
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/manylights_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/manylights_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/manylights_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/manylights_shadowmap.png" width="400" /></a>
+
 Voxels: 20 ms light update, 0.5 ms scene render
 Shadow maps: 0.5 ms light update, 5 ms scene render
 Explanation: cumulative volume of light-voxel overlap in this case makes voxel light update slow
@@ -102,8 +104,9 @@ Quality - lights
 Shadow map solution provides the ground truth in terms of simulating the lights - the screenshot with 1000 lights above is made with shadow maps, and you can see that the specular highlights - modeled with a BRDF that is getting us basically light reflections - are perfectly preserved.
  
 Voxel solution is fundamentally worse in that it approximates light influence at each voxel as if it just comes from one light, so in general you see the specular quality suffer; for example, here’s a screenshot with two lights (green & red) over a highly reflective surface, taken with shadow maps:
- [shadow maps]
- 
+
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/specularrg_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/specularrg_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/specularrg_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/specularrg_shadowmap.png" width="400" /></a>
+
 Here’s a screenshot from the same camera, using voxel lighting solution:
  [voxels]
  
@@ -111,6 +114,8 @@ As you can see, while in voxels away from the center of the camera you see disti
  
 In some cases the approximation we use produces results that very unconvincing, although we could improve this to some degree:
  [voxels]
+
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/specularcurve_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/specularcurve_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/specularcurve_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/specularcurve_shadowmap.png" width="400" /></a>
  
 You can see curved, elongated and miscolored specular highlights, and a few voxels below one of the parts are just missing light information. Same screenshot for shadow maps provides a much better result:
  [shadow maps]
@@ -120,20 +125,22 @@ Quality - shadows
 
 In general a defining quality of shadow maps is fidelity, and a defining quality of voxel shadows is softness. Shadow maps produce pretty crisp shadows, with minimum representable detail sufficiently high to render out a convincing character shadow:
  
- [shadow maps]
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/shadows_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/shadows_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/shadows_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/shadows_shadowmap.png" width="400" /></a>
  
 Our voxel shadow algorithm is very good at producing really soft shadows, but since the smallest voxel size is 1 voxel, the shadows from small parts either don’t register at all, or have vastly incorrect shapes:
  
  [voxels]
  
 For this reason we currently use a shadow map variant to render shadows from the characters - this, however, is a duct tape solution in the sense that it only applies to the sun casting shadows from character, other light sources and/or objects aren’t affected).
+
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_shadowmap.png" width="400" /></a>
  
 Quality - skylight
 ===
 
 An important feature that we support in the voxel pipeline is computing the skylight factor - how visible is the sky from the current voxel? This is used to blend between outdoor and indoor lighting conditions and is very effective at enhancing the lighting quality. Consider this screenshot (using voxels):
  
- [voxels]
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/skylight_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/skylight_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/skylight_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/skylight_shadowmap.png" width="400" /></a>
  
 Here you can see that it’s much brighter outside the house than it is inside the house, even in the areas that are in the shadow of the house. In contrast, shadow maps do not provide a solution for this factor, which makes the picture look dull:
  
@@ -145,6 +152,8 @@ It’s worth noting the fundamental differences in geometry representation betwe
  
 Voxels assume that all objects that the lighting engine supports can be “voxelized” - that is, for each voxel in the world there’s a fast way to compute the volume of intersection between that object and the voxel. This is analytically computable for primitive shapes, but complex objects like CSGs and MeshParts present a significant challenge in this area. Currently we rely on a crude convex decomposition and a set of hacks to voxelize these efficiently, that often result in visible artifacts:
  
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/csg_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/csg_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/csg_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/csg_shadowmap.png" width="400" /></a>
+ 
  [voxels]
  
 Shadow maps, on the other hand, use the same polygonal representation we use for rendering, thus they are able to represent the shapes of all objects perfectly:
@@ -155,7 +164,7 @@ Quality - light leaks
 
 While the shape of the shadow is important, what perhaps is even more important is that pixels that should be completely invisible from the light source point of view are treated as such. When various approximations violate this, you get what’s called light leaking - visible strips of light, that are particularly problematic in high-contrast environments, such as being inside a building with bright sun outside. Here’s an example of a light leak:
  
- [voxels]
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/leaks_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/leaks_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/leaks_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/leaks_shadowmap.png" width="400" /></a>
  
 The rough shape of the light cast through the window isn’t too objectionable here, but what *is* objectionable is the thin lit part of the floor right next to the wall.
  
@@ -182,7 +191,7 @@ Vision - vegetation
 
 While shadow maps can’t represent translucency very well, what they can do is represent small features of objects (such as vegetation) regardless of whether they are modeled with geometry or with textures. Voxels aren’t small enough to serve this use case (and also it’s not easy to access the texture information since it requires precisely modeling the surface of the mesh instead of the volume). It seems unlikely that we can ever get good looking shadows from vegetation with voxels, whereas shadow maps can support this use case even with existing content, as shown on this screenshot:
  
- [shadow maps]
+<a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/vegetation_voxel.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/vegetation_voxel.png" width="400" /></a> <a href="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/vegetation_shadowmap.png"><img src="https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/vegetation_shadowmap.png" width="400" /></a>
 
 Vision - self-illumination
 ===
