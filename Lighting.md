@@ -55,6 +55,9 @@ To put the theoretical results above in a more practical environment, here are r
 Paris (sun shadows, very few non-shadow-casting lights)
 ---
 
+[![Voxels](https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_voxels.png)](https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_voxels.png)
+[![Shadow maps](https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_shadowmap.png)](https://gist.githubusercontent.com/zeux/4e7cfe4cf3b373e0d05c466faa6dbc48/raw/bridge_shadowmap.png)
+
 [voxels]
 Voxels: 6 ms shadow update, 1.5 ms scene render
 Shadow maps: 1 ms shadow update, 2.4 ms scene render
