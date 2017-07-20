@@ -37,11 +37,11 @@ In the spirit of transparency, we decided that instead of just making this decis
 
 > There will be a download link here later today!
 
-<img align="right" src="images/mode_switch.png">
 This is a custom build of Roblox Studio. It requires Windows 7 (or higher) and a mid-tier DirectX 11 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner.
 
 Note that the build has not been optimized; performance of both engines can and will be improved significantly, both for the highest quality level and for the lowest quality level.
 
+<img align="right" src="images/mode_switch.png">
 The build has three lighting engines built in, that you can switch between with Lighting.LightingMode property:
 
 * VoxelCPU - the current voxel engine (4^3 voxels);
