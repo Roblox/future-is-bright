@@ -27,7 +27,7 @@ Since we had two competing approaches, we could not just pick any one of them - 
 
 We tried to answer these questions and more by taking the code built during the hack weeks and developing it further to incorporate existing Roblox features as well as implementing some possible future extensions. Both approaches were integrated into one build that made it easy to compare the quality and performance on the same levels on the same hardware.
 
-Based on this exploration, we have created a comparative analysis document that we want to share: [compare](Comparison).
+Based on this exploration, we have created a comparative analysis document that we want to share: [link](compare).
 
 After building this out, it became obvious that this is a tradeoff - each system has some nice properties that the other system doesn't, and we are still debating internally which system we should go with. This is a hard decision because we have to balance many variables and pick the best system that can serve us well for years to come.
 
@@ -41,7 +41,8 @@ This is a custom build of Roblox Studio. It requires Windows 7 (or higher) and a
 
 Note that the build has not been optimized; performance of both engines can and will be improved significantly, both for the highest quality level and for the lowest quality level.
 
-The build has three lighting engines built in - the current voxel engine (with 4^3 voxels), the new voxel engine with 1^3 voxels and the new engine based on shadow maps. You can switch between the engines with Lighting.LightingMode property. ![](images/mode_switch.png)
+The build has three lighting engines built in - the current voxel engine (with 4^3 voxels), the new voxel engine (with 1^3 voxels and other advancements) and the new engine based on shadow maps. You can switch between the engines with Lighting.LightingMode property.
+<img align="right" src="images/mode_switch.png">
 
 We are excited to see what you will build and hope that you will helps us make the right choice by sharing the content you build and the problems you have (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
