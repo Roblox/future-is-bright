@@ -7,7 +7,7 @@ title: Future Is Bright
 
 # Hack Week
 
-We are always trying to improve Roblox by improving the fidelity and the scale of our simulation. In particular, our lighting engine has served us well over the years but limits the creative power of our developers, which is why over the last few years we have built several lighting prototypes during hack week:
+We are always trying to improve Roblox by enhancing the fidelity and the scale of our simulation. In particular, our lighting engine has served us well over the years but limits the creative power of our developers, which is why over the last few years we have built several lighting prototypes during hack week:
 
 | Hack Week 2015 (Next Generation Voxels) | Hack Week 2016 (Future Is Bright) |
 |:-:|:-:|
