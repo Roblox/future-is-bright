@@ -3,42 +3,70 @@ layout: default
 title: Future Is Bright
 ---
 
-<p id="demo"></p>
+<p id="countdown" style="align: center; font-size: 48px; visibility: hidden;"></p>
+
+# Hack Week
+
+We are always trying to improve Roblox by improving the fidelity and the scale of our simulation. In particular, our lighting engine has served us well over the years but limits the creative power of our developers, which is why over the last few years we have built several lighting prototypes during hack week:
 
 | Hack Week 2015 (Next Generation Voxels) | Hack Week 2016 (Future Is Bright) |
 |:-:|:-:|
 | [![](https://img.youtube.com/vi/z5TmqDtpwSM/0.jpg)](https://www.youtube.com/watch?v=z5TmqDtpwSM) | [![](https://img.youtube.com/vi/lrvOGqC9ZjQ/0.jpg)](https://www.youtube.com/watch?v=lrvOGqC9ZjQ) |
 
-Content here
-[Link here](https://github.com/Roblox/future-is-bright/releases/download/v1/future-is-bright-v1.zip)
+The focus of these hack week projects was to push the boundaries of quality of content on Roblox; since it became clear that both represent significant improvements in the lighting technology that our community wants, we decided to invest more time in this.
+
+# Exploration
+
+Since we had two competing approaches, we could not just pick any one of them - we had to pick the right one. There are many factors to consider when building a new lighting engine:
+
+* What kind of features can it have now?
+* What kind of features can become possible as future extensions?
+* How well does the engine perform on existing content?
+* How well does the engine perform in extreme cases?
+* What is the range of hardware the system can run on?
+
+We tried to answer these questions and more by taking the code built during the hack weeks and developing it further to incorporate existing Roblox features as well as implementing some possible future extensions. Both approaches were integrated into one build that made it easy to compare the quality and performance on the same levels on the same hardware.
+
+Based on this exploration, we have created a comparative analysis document that we want to share: [compare](Comparison).
+
+After building this out, it became obvious that this is a tradeoff - each system has some nice properties that the other system doesn't, and we are still debating internally which system we should go with. This is a hard decision because we have to balance many variables and pick the best system that can serve us well for years to come.
+
+# Prototype
+
+In the spirit of transparency, we decided that instead of just making this decision ourselves we should also gather feedback from our community. We could just share the document and let you pick, but there are a lot of subtleties that you can only really notice when trying to build content for new systems, which is why instead we want to share the prototype build with you:
+
+[Download (.zip, 108 MB)](https://github.com/Roblox/future-is-bright/releases/download/v1/future-is-bright-v1.zip)
+
+This is a custom build of Roblox Studio. It requires Windows 7 (or higher) and a DirectX 11 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner.
+
+Note that the build has not been optimized; performance of both engines can and will be improved significantly, both for the highest quality level and for the lowest quality level.
+
+The build has three lighting engines built in - the current voxel engine (with 4^3 voxels), the new voxel engine with 1^3 voxels and the new engine based on shadow maps. You can switch between the engines with Lighting.LightingMode property. ![](images/mode_switch.png)
+
+We are excited to see what you will build and hope that you will helps us make the right choice by sharing the content you build and the problems you have (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
 <script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
+var countDownDate = new Date("July 22 2017 18:00:00 GMT-0700").getTime();
 
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get todays date and time
+var interval = setInterval(function() {
   var now = new Date().getTime();
-
-  // Find the distance between now an the count down date
   var distance = countDownDate - now;
 
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  var element = document.getElementById("countdown");
 
-  // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text 
   if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    if (interval) {
+      clearInterval(interval);
+
+	  element.style.visibility = 'hidden';
+    }
+  } else {
+    var hours = Math.floor(distance / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    element.innerHTML = "Prototype available in " + hours + "h " + minutes + "m " + seconds + "s ";
+    element.style.visibility = 'visible';
   }
 }, 1000);
 </script>

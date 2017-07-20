@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Future Is Bright - Technology
+title: Future Is Bright - Comparison
 ---
 
 Overview
