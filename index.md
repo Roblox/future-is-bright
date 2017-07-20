@@ -42,7 +42,13 @@ This is a custom build of Roblox Studio. It requires Windows 7 (or higher) and a
 
 Note that the build has not been optimized; performance of both engines can and will be improved significantly, both for the highest quality level and for the lowest quality level.
 
-The build has three lighting engines built in - the current voxel engine (with 4^3 voxels), the new voxel engine (with 1^3 voxels and other advancements) and the new engine based on shadow maps. You can switch between the engines with Lighting.LightingMode property. There are some other properties you might want to experiment with, such as Lighting.ShadowSoftness (which currently only works in the new voxel engine). The build also uses an experimental High-Dynamic Range implementation, which means that for both new lighting engines you can use values for light brightness that exceed 1; if you have existing content with high Brightness values you might have to adjust these for it to look better.
+The build has three lighting engines built in, that you can switch between with Lighting.LightingMode property:
+
+* VoxelCPU - the current voxel engine (4^3 voxels);
+* VoxelGPUCascaded - the new voxel engine from "Next Generation Voxels" video (1^3 voxels and other improvements);
+* ShadowMap -  the new shadow map-based engine from "Future Is Bright" video.
+
+There are some other properties you might want to experiment with, such as Lighting.ShadowSoftness (which currently only works in the new voxel engine). The build also uses an experimental High-Dynamic Range implementation, which means that for both new lighting engines you can use values for light brightness that exceed 1; if you have existing content with high Brightness values you might have to adjust these for it to look better.
 
 We are excited to see what you build and hope that you will help us make the right choice by sharing the content you build and the problems you encounter (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
