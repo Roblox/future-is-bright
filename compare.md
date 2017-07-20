@@ -128,10 +128,10 @@ Our audience is getting increasingly mobile; this means that we have to think of
 Our existing voxel lighting system fits mobile really well - it supports many complex lighting features (light shadows, skylight, etc.) and runs most of the complex computations on CPU, thus having minimal requirements for the GPU performance and feature set. Since we still will have to maintain this system for the low end mobile and desktop market for the foreseeable future, we have several options in terms of mobile support:
 
 * Keep existing system on mobile, new system will be desktop/console only. This means that a large segment of the user base will not have access to the new system.
-* Improve existing system in a modest way (slightly lower voxel size, enhance voxel representation), use new system for desktop/console.
+* Improve existing system in a modest way for high end mobile (slightly reduced voxel size, enhanced voxel representation), use new system for desktop/console.
 * Keep existing system on low-end mobile, find a way to scale down the new system so that it can work on high-end mobile.
 
-In all of these cases we have to answer the question of content compatibility - one of the fundamental promises of our platform is "build content anywhere and run it anywhere", which means that we have to understand how well can content built for the new system look when using the old system, or some enhanced variant thereof.
+In all of these cases we have to answer the question of content compatibility - one of the fundamental promises of our platform is "build content once and run it anywhere", which means that we have to understand how well can content built for the new system look when using the old system, or some enhanced variant thereof.
 
 This requires further investigation; on the outset it seems likely that new voxel solution is better in that it has a continuum of quality/behavior all the way from the existing voxel system to the highest quality of the new voxel system, whereas shadowmaps represent a more abrupt quality transition but have a higher chance of working in a limited capacity on high-end mobile devices.
 
