@@ -37,14 +37,14 @@ In the spirit of transparency, we decided that instead of just making this decis
 
 [Download (.zip, 108 MB)](https://github.com/Roblox/future-is-bright/releases/download/v1/future-is-bright-v1.zip)
 
+<img align="right" src="images/mode_switch.png">
 This is a custom build of Roblox Studio. It requires Windows 7 (or higher) and a DirectX 11 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner.
 
 Note that the build has not been optimized; performance of both engines can and will be improved significantly, both for the highest quality level and for the lowest quality level.
 
-The build has three lighting engines built in - the current voxel engine (with 4^3 voxels), the new voxel engine (with 1^3 voxels and other advancements) and the new engine based on shadow maps. You can switch between the engines with Lighting.LightingMode property.
-<img align="right" src="images/mode_switch.png">
+The build has three lighting engines built in - the current voxel engine (with 4^3 voxels), the new voxel engine (with 1^3 voxels and other advancements) and the new engine based on shadow maps. You can switch between the engines with Lighting.LightingMode property. There are some other properties you might want to experiment with, such as Lighting.ShadowSoftness (which currently only works in the new voxel engine). The build also uses an experimental High-Dynamic Range implementation, which means that for both new lighting engines you can use values for light brightness that exceed 1; if you have existing content with high Brightness values you might have to adjust these for it to look better.
 
-We are excited to see what you will build and hope that you will helps us make the right choice by sharing the content you build and the problems you have (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
+We are excited to see what you build and hope that you will help us make the right choice by sharing the content you build and the problems you encounter (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
 <script>
 var countDownDate = new Date("July 22 2017 18:00:00 GMT-0700").getTime();
