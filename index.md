@@ -48,7 +48,7 @@ The build has three lighting engines built in, that you can switch between with 
 * VoxelGPUCascaded - the new voxel engine from "Next Generation Voxels" video (1^3 voxels and other improvements);
 * ShadowMap -  the new shadow map-based engine from "Future Is Bright" video.
 
-There are some other properties you might want to experiment with, such as Lighting.ShadowSoftness (which currently only works in the new voxel engine). The build also uses an experimental High-Dynamic Range implementation, which means that for both new lighting engines you can use values for light brightness that exceed 1; if you have existing content with high Brightness values you might have to adjust these for it to look better.
+There are some other properties you might want to experiment with, such as Lighting.ShadowSoftness (which currently only works in VoxelGPUCascaded mode) or Light.ShadowCutoff (which currently only works in ShadowMap mode). The build also uses an experimental High-Dynamic Range implementation, which means that for both new lighting engines you can use values for light brightness that exceed 1; if you have existing content with high Brightness values you might have to adjust these for it to look better.
 
 We are excited to see what you build and hope that you will help us make the right choice by sharing the content you build and the problems you encounter (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
