@@ -37,7 +37,7 @@ After building this out, it became obvious that this is a tradeoff - each system
 
 In the spirit of transparency, we decided that instead of just making this decision ourselves we should also gather feedback from our community. We could just share the document and let you pick, but there are a lot of subtleties that you can only really notice when trying to build content for new systems, which is why instead we want to share the prototype build with you:
 
-[Download (.zip, 108 MB)](https://github.com/Roblox/future-is-bright/releases/download/v1/future-is-bright-v1.zip); updated 7/22/2017 (v1)
+[Download (.zip, ~100 MB)](https://github.com/Roblox/future-is-bright/releases/download/v2/future-is-bright-v2.zip); updated 7/24/2017 (v2)
 
 This is a custom build of Roblox Studio. It requires Windows 7 (or higher) and a mid-tier DirectX 11 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner.
 
