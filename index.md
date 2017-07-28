@@ -3,8 +3,6 @@ layout: default
 title: Future Is Bright
 ---
 
-<p id="countdown" style="align: center; font-size: 48px; visibility: hidden;"></p>
-
 # Hack Week
 
 We are always trying to improve Roblox by enhancing the fidelity and the scale of our simulation. In particular, our lighting engine has served us well over the years but limits the creative power of our developers, which is why over the last few years we have built several lighting prototypes during hack week:
@@ -54,28 +52,6 @@ There are some other properties you might want to experiment with, such as Light
 
 We are excited to see what you build and hope that you will help us make the right choice by sharing the content you build and the problems you encounter (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
-<script>
-var countDownDate = new Date("July 22 2017 18:00:00 GMT-0700").getTime();
+# Results
 
-var interval = setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
-
-  var element = document.getElementById("countdown");
-
-  if (distance < 0) {
-    if (interval) {
-      clearInterval(interval);
-
-	  element.style.visibility = 'hidden';
-    }
-  } else {
-    var hours = Math.floor(distance / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    element.innerHTML = "Prototype available in " + hours + "h " + minutes + "m " + seconds + "s ";
-    element.style.visibility = 'visible';
-  }
-}, 1000);
-</script>
+We released the prototype build on July 22nd and the response has been nothing short of astounding. [Here are some of the screenshots that Roblox developers shared with us in 60 hours since we released the build](results).
