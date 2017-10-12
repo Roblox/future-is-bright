@@ -5,3 +5,4 @@ http://roblox.github.io/future-is-bright
 * v3: Artifact fixes for SurfaceLights and SpotLights, as well as GlobalShadows
 * v4: Crash fixes
 * v5: Fix Blur+Neon combination and improve particle shadows (+ add ParticleEmitter.ShadowOpacity)
+* v6: Performance improvements, Direct3D 10 support for ShadowMap, Lighting.AutoExposure
