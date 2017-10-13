@@ -6,3 +6,4 @@ http://roblox.github.io/future-is-bright
 * v4: Crash fixes
 * v5: Fix Blur+Neon combination and improve particle shadows (+ add ParticleEmitter.ShadowOpacity)
 * v6: Performance improvements, Direct3D 10 support for ShadowMap, Lighting.AutoExposure
+* v7: Fix voxelization issues when terrain isn't present in the place
