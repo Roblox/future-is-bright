@@ -8,4 +8,4 @@ http://roblox.github.io/future-is-bright
 * v6: Performance improvements, Direct3D 10 support for ShadowMap, Lighting.AutoExposure
 * v7: Fix voxelization issues when terrain isn't present in the place
 * v8: Fix crashes in rare cases when sun shadows aren't being needed
-* v9: New experimental tonemapper, performance improvements for Direct3D 10
+* v9: New experimental tonemapper, performance improvements, restore humanoid shadows
