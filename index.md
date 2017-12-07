@@ -38,7 +38,7 @@ In the spirit of transparency, we decided that instead of just making this decis
 - [Download Windows build (.zip, ~120 MB)](https://github.com/Roblox/future-is-bright/releases/download/v10/future-is-bright-v10.zip); updated 12/6/2017 (v10)
 - [Download macOS build (.zip, ~120 MB)](https://github.com/Roblox/future-is-bright/releases/download/v10/future-is-bright-v10.zip); updated 12/6/2017 (v10)
 
-This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build inside - don't run directly from .zip. The Windows build requires Windows 7 (or higher) and a mid-tier DirectX 11 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner. The Mac build requires Metal and a recent macOS release (there may be issues on early OS versions such as OSX 10.11).
+This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build inside - don't run directly from .zip. The Windows build requires Windows 7 (or higher) and a mid-tier DirectX 10 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner. The Mac build requires Metal and a recent macOS release (there may be issues on early OS versions such as OSX 10.11).
 
 Note that the build has not been optimized; performance of both engines can and will be improved significantly, both for the highest quality level and for the lowest quality level.
 
