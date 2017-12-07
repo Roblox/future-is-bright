@@ -10,3 +10,4 @@ http://roblox.github.io/future-is-bright
 * v8: Fix crashes in rare cases when sun shadows aren't being needed
 * v9: New experimental tonemapper, performance improvements, restore humanoid shadows
 * v10: New shadow filtering, Mac support (requires Metal)
+* v11: Fix crashes in levels with trails
