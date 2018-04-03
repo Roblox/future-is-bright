@@ -33,23 +33,38 @@ After building this out, it became obvious that this is a tradeoff - each system
 
 # Prototype
 
-In the spirit of transparency, we decided that instead of just making this decision ourselves we should also gather feedback from our community. We could just share the document and let you pick, but there are a lot of subtleties that you can only really notice when trying to build content for new systems, which is why instead we want to share the prototype build with you:
+In the spirit of transparency, we decided that instead of just making this decision ourselves we should also gather feedback from our community. We could just share the document and let you pick, but there are a lot of subtleties that you can only really notice when trying to build content for new systems, which is why instead we shared the prototype builds with you (check out the Releases page for v1-v11 builds).
+
+The builds had three lighting engines built in, that you could switch between with Lighting.LightingMode property:
+
+* VoxelCPU - the current voxel engine (4^3 voxels);
+* VoxelGPUCascaded - the new voxel engine from "Next Generation Voxels" video (1^3 voxels and other improvements);
+* ShadowMap -  the new shadow map-based engine from "Future Is Bright" video.
+
+Based on this exploration and the community feedback, we have settled on the approach we want to take, detailed below.
+
+# Hybrid
+
+Both VoxelGPUCascaded and ShadowMap engines had their own strenghts and weaknesses in terms of quality and performance. We also had to balance this with the performance and quality on low-end systems. After a lot of experimentation we have settled on a plan going forward:
+
+- On low-end systems, we'll continue to use CPU-based voxel engine.
+- We will improve some key aspects of the CPU-based voxel engine while maintaining the high performance and versatility
+- On high-end systems, we'll use ShadowMaps for most of the lighting work, and the same CPU-based voxel engine for skylight
+- Depending on the quality level, different portions of the screen will be using different engines for different components; we'll try our best to minimize visual discrepancies.
+
+Starting from v12, we're now focusing on this hybrid technology, and are working on quality on both low-end and high-end, and performance. You can download a preview build here:
 
 - [Download Windows build (.zip, ~120 MB)](https://github.com/Roblox/future-is-bright/releases/download/v12/future-is-bright-v12.zip); updated 3/20/2018 (v12)
 - [Download macOS build (.zip, ~130 MB)](https://github.com/Roblox/future-is-bright/releases/download/v12/future-is-bright-v12-mac.zip); updated 3/20/2018 (v12)
 
 This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build inside - don't run directly from .zip. The Windows build requires Windows 7 (or higher) and a mid-tier DirectX 10 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner. The Mac build requires Metal and a recent macOS release (there may be issues on early OS versions such as OSX 10.11).
 
-Note that the build has not been optimized; performance of both engines can and will be improved significantly, both for the highest quality level and for the lowest quality level.
-
 <img align="right" src="images/mode_switch.png">
-The build has three lighting engines built in, that you can switch between with Lighting.LightingMode property:
-
-* VoxelCPU - the current voxel engine (4^3 voxels);
-* VoxelGPUCascaded - the new voxel engine from "Next Generation Voxels" video (1^3 voxels and other improvements);
-* ShadowMap -  the new shadow map-based engine from "Future Is Bright" video.
+To activate new lighting engine, make sure to enable FutureIsBright property in Studio settings, and restart Studio after that.
 
 There are some other properties you might want to experiment with, such as Lighting.ShadowSoftness/Light.ShadowSoftness and Light.ShadowCutoff (disables shadows for parts really close to the light). The build also uses an experimental High-Dynamic Range implementation, which means that for both new lighting engines you can use values for light brightness that exceed 1; if you have existing content with high Brightness values you might have to adjust these for it to look better.
+
+Finally, you can adjust hybrid blending parameter via Lighting.HybridBlendDist and Lighting.HybridBlendSoftness; these will eventually be driven through the quality level.
 
 We are excited to see what you build and hope that you will help us make the right choice by sharing the content you build and the problems you encounter (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
