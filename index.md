@@ -63,11 +63,19 @@ This is a custom build of Roblox Studio. Make sure to copy the folder from this 
 
 To activate new lighting engine, make sure to enable FutureIsBright property in Studio settings, and restart Studio after that.
 
-There are some other properties you might want to experiment with, such as Lighting.ShadowSoftness/Light.ShadowSoftness and Light.ShadowCutoff (disables shadows for parts really close to the light). The build also uses an experimental High-Dynamic Range implementation, which means that for both new lighting engines you can use values for light brightness that exceed 1; if you have existing content with high Brightness values you might have to adjust these for it to look better.
+We are excited to see what you build and hope that you will share the content you work on and the problems you encounter (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
-Finally, you can adjust hybrid blending parameter via Lighting.HybridBlendDist and Lighting.HybridBlendSoftness; these will eventually be driven through the quality level.
+# New API
 
-We are excited to see what you build and hope that you will help us make the right choice by sharing the content you build and the problems you encounter (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
+There are some other properties you might want to play with (all of these are experimental and may or may not ship):
+
+- Lighting.ShadowSoftness & Light.ShadowSoftness allow you to vary "softness" (penumbra size) for sun or each individual light source. The values should be between 0 and 1. Note that we can't render perfectly sharp shadows with our current technology - softness=0 is as sharp as we can get.
+
+- Light.ShadowCutoff allows you to remove undesired shadows that are cast by geometry that's very close to the light source; this is useful for lanterns and torches. The property defaults to 0.75 to improve compatibility with existing content - for new light sources you may or may not want to set it to 0.
+
+- Lighting.Exposure allows you to control the exposure bias (applied on top of the exposure derived by our metering algorithm); Lighting.AutoExposure allows you to disable metering and fix the exposure level to be always equal to Lighting.Exposure
+
+- Lighting.HybridBlendDist and Lighting.HybridBlendSoftness allow you to adjust the blending parameters between shadowmaps and voxel lighting; these will eventually be driven via the quality level.
 
 # Results
 
