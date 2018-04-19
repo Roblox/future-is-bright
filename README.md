@@ -12,3 +12,4 @@ http://roblox.github.io/future-is-bright
 * v10: New shadow filtering, Mac support (requires Metal)
 * v11: Fix crashes in levels with trails
 * v12: Hybrid mode is now the only available mode; FutureIsBright is now a setting in Studio Rendering settings; lots of optimizations and improvements. Lots of things are still in flux.
+* v13: Alpha version of anisotropic occupancy (thin parts occlude light better for voxel lighting), many performance improvements for shadow rendering, improved shadow LOD quality.
