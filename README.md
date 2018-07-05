@@ -13,3 +13,4 @@ http://roblox.github.io/future-is-bright
 * v11: Fix crashes in levels with trails
 * v12: Hybrid mode is now the only available mode; FutureIsBright is now a setting in Studio Rendering settings; lots of optimizations and improvements. Lots of things are still in flux.
 * v13: Alpha version of anisotropic occupancy (thin parts occlude light better for voxel lighting), many performance improvements for shadow rendering, improved shadow LOD quality.
+* v14: Updated core Studio build to support dark theme and other new features, improved anisotropic occupancy, more performance & quality work and lots of bug fixes.
