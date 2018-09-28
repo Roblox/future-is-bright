@@ -54,8 +54,8 @@ Both VoxelGPUCascaded and ShadowMap engines had their own strenghts and weakness
 
 Starting from v12, we're now focusing on this hybrid technology, and are working on quality on both low-end and high-end, and performance. You can download a preview build here:
 
-- [Download Windows build (.zip, ~122 MB)](https://github.com/Roblox/future-is-bright/releases/download/v14/future-is-bright-v14.zip); updated 7/5/2018 (v14)
-- [Download macOS build (.zip, ~132 MB)](https://github.com/Roblox/future-is-bright/releases/download/v14/future-is-bright-v14-mac.zip); updated 7/5/2018 (v14)
+- [Download Windows build (.zip, ~122 MB)](https://github.com/Roblox/future-is-bright/releases/download/v15/future-is-bright-v15.zip); updated 9/28/2018 (v15)
+- [Download macOS build (.zip, ~132 MB)](https://github.com/Roblox/future-is-bright/releases/download/v15/future-is-bright-v15-mac.zip); updated 9/28/2018 (v15)
 
 This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build inside - don't run directly from .zip. The Windows build requires Windows 7 (or higher) and a mid-tier DirectX 10 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner. The Mac build requires Metal and a recent macOS release (there may be issues on early OS versions such as OSX 10.11).
 
