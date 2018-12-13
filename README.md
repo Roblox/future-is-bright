@@ -15,3 +15,4 @@ http://roblox.github.io/future-is-bright
 * v13: Alpha version of anisotropic occupancy (thin parts occlude light better for voxel lighting), many performance improvements for shadow rendering, improved shadow LOD quality.
 * v14: Updated core Studio build to support dark theme and other new features, improved anisotropic occupancy, more performance & quality work and lots of bug fixes.
 * v15: Fix crashes, improve shadow filtering quality and performance
+* v16: New build based off production Studio with FIB phase 1, FIB phase 3 selectable via Lighting.Technology, and new shadow system (WIP)
