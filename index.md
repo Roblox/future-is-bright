@@ -54,14 +54,12 @@ Both VoxelGPUCascaded and ShadowMap engines had their own strenghts and weakness
 
 Starting from v12, we're now focusing on this hybrid technology, and are working on quality on both low-end and high-end, and performance. You can download a preview build here:
 
-- [Download Windows build (.zip, ~122 MB)](https://github.com/Roblox/future-is-bright/releases/download/v15/future-is-bright-v15.zip); updated 9/28/2018 (v15)
-- [Download macOS build (.zip, ~132 MB)](https://github.com/Roblox/future-is-bright/releases/download/v15/future-is-bright-v15-mac.zip); updated 9/28/2018 (v15)
+- [Download Windows build (.zip, ~122 MB)](https://github.com/Roblox/future-is-bright/releases/download/v16/future-is-bright-v16.zip); updated 12/13/2018 (v16)
+- [Download macOS build (.zip, ~132 MB)](https://github.com/Roblox/future-is-bright/releases/download/v16/future-is-bright-v16-mac.zip); updated 12/13/2018 (v16)
 
 This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build inside - don't run directly from .zip. The Windows build requires Windows 7 (or higher) and a mid-tier DirectX 10 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner. The Mac build requires Metal and a recent macOS release (there may be issues on early OS versions such as OSX 10.11).
 
-<img src="images/mode_switch.png">
-
-To activate new lighting engine, make sure to enable FutureIsBright property in Studio settings, and restart Studio after that.
+To activate new lighting engine, make sure to change Lighting.Technology to Future.
 
 We are excited to see what you build and hope that you will share the content you work on and the problems you encounter (you can [report issues on GitHub](https://github.com/Roblox/future-is-bright/issues)).
 
@@ -73,9 +71,7 @@ There are some other properties you might want to play with (all of these are ex
 
 - Light.ShadowCutoff allows you to remove undesired shadows that are cast by geometry that's very close to the light source; this is useful for lanterns and torches. The property defaults to 0.75 to improve compatibility with existing content - for new light sources you may or may not want to set it to 0.
 
-- Lighting.Exposure allows you to control the exposure bias (applied on top of the exposure derived by our metering algorithm); Lighting.AutoExposure allows you to disable metering and fix the exposure level to be always equal to Lighting.Exposure
-
-- Lighting.HybridBlendDist and Lighting.HybridBlendSoftness allow you to adjust the blending parameters between shadowmaps and voxel lighting; these will eventually be driven via the quality level.
+- Lighting.ExposureCompensation allows you to control the exposure bias (applied on top of the exposure derived by our metering algorithm); Lighting.AutoExposure allows you to disable metering and fix the exposure level to be always equal to Lighting.Exposure
 
 # Results
 
