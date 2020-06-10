@@ -1,5 +1,9 @@
 http://roblox.github.io/future-is-bright
 
+FIB is going to become a public Studio beta in official Roblox Studio distribution in June 2020.
+This repository is going to be preserved for historical reasons but will not be updated any longer.
+Thanks for helping us get Future Is Bright closer to release!
+
 * v1: Initial release
 * v2: Win7 compatibility fixes
 * v3: Artifact fixes for SurfaceLights and SpotLights, as well as GlobalShadows
