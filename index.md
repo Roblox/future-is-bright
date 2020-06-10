@@ -54,8 +54,10 @@ Both VoxelGPUCascaded and ShadowMap engines had their own strenghts and weakness
 
 Starting from v12, we're now focusing on this hybrid technology, and are working on quality on both low-end and high-end, and performance. You can download a preview build here:
 
-- [Download Windows build (.zip, ~122 MB)](https://github.com/Roblox/future-is-bright/releases/download/v16/future-is-bright-v16.zip); updated 12/13/2018 (v16)
-- [Download macOS build (.zip, ~132 MB)](https://github.com/Roblox/future-is-bright/releases/download/v16/future-is-bright-v16-mac.zip); updated 12/13/2018 (v16)
+> FIB is going to become a public Studio beta in official Roblox Studio distribution in June 2020.
+> This repository is going to be preserved for historical reasons but will not be updated any longer.
+> Since the old preview builds are defunct and don't work, there are no links here anymore.
+> Thanks for helping us get Future Is Bright closer to release!
 
 This is a custom build of Roblox Studio. Make sure to copy the folder from this .zip to your computer before running the build inside - don't run directly from .zip. The Windows build requires Windows 7 (or higher) and a mid-tier DirectX 10 compatible GPU - this does *not* mean that either lighting engine can only work on these systems, but limiting the supported hardware for the prototype allows us to iterate much faster and release the prototype to you much sooner. The Mac build requires Metal and a recent macOS release (there may be issues on early OS versions such as OSX 10.11).
 
